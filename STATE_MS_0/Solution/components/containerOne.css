@@ -1,0 +1,9 @@
+#containerOne {
+    padding: 50px;
+    background: orange;
+    border-radius: 50%;
+
+
+    display: grid;
+    align-items: center;
+}
