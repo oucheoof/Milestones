@@ -33,14 +33,18 @@ function rendercontainerInput(parentID){
 
 
         STATE.entityOne.push({
-             message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, 
+             /* message: `idValue: ${idValue},  */message:`Text: ${textValue}, Number: ${numberValue}`, 
         });
-
-        idValue++;
-
 
         renderApp()
     });
+
+    buttonDOM.addEventListener("click", function() {
+        idValue++;
+        console.log(idValue);
+    });
+
+    
     
     button2DOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
