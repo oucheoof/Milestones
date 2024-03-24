@@ -7,8 +7,6 @@ function rendercontainerInput(parentID){
     inputTextDOM.type =  "text";
     parentDOM.appendChild(inputTextDOM);
 
-    //Fortsätt skapa input
-
     let inputNumberDOM = document.createElement("input");
     parentDOM = document.getElementById(parentID);
     inputNumberDOM.type =  "number";
@@ -25,10 +23,23 @@ function rendercontainerInput(parentID){
     button2DOM.textContent = "Character";
     parentDOM.appendChild(button2DOM);
 
-    buttonDOM.addEventListener("click", function(){
+    buttonDOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
-        let textNumber = inputNumberDOM.value;
+        let numberValue = inputNumberDOM.value;
 
-    })
+        STATE.entityOne.push({ message: `Text: ${textValue}, Number: ${numberValue}` });
+
+        renderApp()
+    });
+    
+    button2DOM.addEventListener("click", function() {
+        let textValue = inputTextDOM.value;
+        let numberValue = inputNumberDOM.value;
+
+        STATE.entityTwo.push({ message: `Text: ${textValue}, Number: ${numberValue}` });
+
+        renderApp()
+    });
+
 
 }
