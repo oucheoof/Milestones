@@ -1,12 +1,12 @@
 const STATE = {
     entityOne: [
         {
-            message: 'Hello from entity ONE'
+            /* message: 'Hello from entity ONE' */
         }
     ],
     entityTwo: [
         {
-            message: 'Hello from entity TWO'
+            /* message: 'Hello from entity TWO' */
         }
     ]
 }

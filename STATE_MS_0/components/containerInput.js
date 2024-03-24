@@ -34,7 +34,6 @@ function rendercontainerInput(parentID){
 
         STATE.entityOne.push({
              message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, 
-
         });
 
         idValue++;
