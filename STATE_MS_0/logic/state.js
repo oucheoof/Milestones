@@ -21,5 +21,7 @@ function renderApp() {
     renderContainerTwo('wrapper');
     renderContainerTotal("wrapper");
     rendercontainerInput("wrapper");
+    renderInstance('wrapper', STATE.entityOne[0]); // Render instance with entityOne data
+    renderDeleteButton('wrapper', 'entityOne'); // Pass parentID and entity name
 
 }
