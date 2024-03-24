@@ -1,3 +1,5 @@
+let idValue = 0; //Flytta vart?
+
 function rendercontainerInput(parentID){
 
     parentDOM = document.getElementById(parentID);
@@ -23,11 +25,20 @@ function rendercontainerInput(parentID){
     button2DOM.textContent = "Character";
     parentDOM.appendChild(button2DOM);
 
+
     buttonDOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-        STATE.entityOne.push({ message: `Text: ${textValue}, Number: ${numberValue}` });
+
+
+        STATE.entityOne.push({
+             message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, 
+
+        });
+
+        idValue++;
+
 
         renderApp()
     });
