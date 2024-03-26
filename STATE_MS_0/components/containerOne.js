@@ -13,7 +13,7 @@ function renderContainerOne( parentID) { // parentId = "wrapper"
     let DOM = document.createElement("p"); 
     DOM.id = "containerOne"; //p id = "containerOne"
 
-    parentDOM = document.getElementById(parentID); //hämta wrapper, reference
+    let parentDOM = document.getElementById(parentID); //hämta wrapper, reference
 
     parentDOM.appendChild(DOM); //wrapper <= "p"
 
@@ -22,4 +22,7 @@ function renderContainerOne( parentID) { // parentId = "wrapper"
     for(let i = 0; i < entityOne.length; i++){
         renderInstance(DOM.id, entityOne[i])
     }
+
+/*     entityOne.forEach(element => renderInstance("containerOne", element))
+ */    
 }

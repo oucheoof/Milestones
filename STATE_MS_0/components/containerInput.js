@@ -29,23 +29,25 @@ function rendercontainerInput(parentID){
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-
-
         STATE.entityOne.push({
-             message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, 
+            /* message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, */ 
+            id: idValue,
+            title: textValue,
+            rank: numberValue
         });
-
+        
         idValue++;
 
-
-        renderApp()
+        renderApp();
     });
     
     button2DOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-        STATE.entityTwo.push({ message: `Text: ${textValue}, Number: ${numberValue}` });
+        STATE.entityTwo.push({
+            id: `ID: ${idValue}, Character: ${textValue}, Rank: ${numberValue}`,
+        });
 
         renderApp()
     });
