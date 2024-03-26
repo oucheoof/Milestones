@@ -33,7 +33,10 @@ function rendercontainerInput(parentID){
 
 
         STATE.entityOne.push({
-             /* message: `idValue: ${idValue},  */message:`Text: ${textValue}, Number: ${numberValue}`, 
+            message:`Text: ${textValue}`,
+            rank: `Number: ${textNumber}`,
+            
+             
         });
 
         renderApp()

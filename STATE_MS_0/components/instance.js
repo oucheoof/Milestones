@@ -9,7 +9,7 @@ function renderInstance( parentID, instanceData) {
 
     let DOM = document.createElement("div");
     DOM.id = "instance";
-    DOM.textContent = instanceData.message;
+    DOM.textContent = instanceData.message + instanceData.rank;
 
     parentDOM = document.getElementById(parentID);
 
