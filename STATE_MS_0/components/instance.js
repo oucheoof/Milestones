@@ -9,18 +9,12 @@ function renderInstance( parentID, instanceData) {
 
     let DOM = document.createElement("div");
     let parentDOM = document.getElementById(parentID);
-    parentDOM.appendChild(DOM);
+    DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
 
+    parentDOM.appendChild(DOM);
 
     DOM.id = "instance";
     
-    for(let key in instanceData){
-        if(key != "id"){
-            const text = document.createElement("p");
-            DOM.append(text);
-            text.textContent = `${key}: ${instanceData[key]}`;
-        }
-    }
 
 
 }
