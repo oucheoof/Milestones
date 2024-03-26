@@ -38,6 +38,8 @@ function rendercontainerInput(parentID){
         
         idValue++;
 
+        /* renderDeleteButton(); */
+
         renderApp();
     });
     

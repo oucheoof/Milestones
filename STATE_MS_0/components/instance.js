@@ -13,8 +13,7 @@ function renderInstance( parentID, instanceData) {
 
 
     DOM.id = "instance";
-/*     DOM.textContent = instanceData.message;
- */
+    
     for(let key in instanceData){
         if(key != "id"){
             const text = document.createElement("p");
@@ -22,6 +21,6 @@ function renderInstance( parentID, instanceData) {
             text.textContent = `${key}: ${instanceData[key]}`;
         }
     }
-    
+
 
 }
