@@ -30,10 +30,10 @@ function rendercontainerInput(parentID){
         let numberValue = inputNumberDOM.value;
 
         STATE.entityOne.push({
-            message:`Text: ${textValue}`,
-            rank: `Number: ${textNumber}`,
-            
-             
+            /* message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, */ 
+            id: idValue,
+            title: textValue,
+            rank: numberValue
         });
         
         idValue++;
