@@ -12,7 +12,6 @@ function rendercontainerInput(parentID){
     let inputNumberDOM = document.createElement("input");
     parentDOM = document.getElementById(parentID);
     inputNumberDOM.type =  "number";
-    console.log("here");
     parentDOM.appendChild(inputNumberDOM);
 
     let buttonDOM = document.createElement("button");

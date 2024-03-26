@@ -1,12 +1,19 @@
 const STATE = {
     entityOne: [
         {
-            /* message: 'Hello from entity ONE' */
+            id: 0,
+            title: "God of War",
+            rank: 10,
+            favourite: false
+
         }
     ],
     entityTwo: [
         {
-            /* message: 'Hello from entity TWO' */
+            id: 1,
+            title: "Kratos",
+            rank: 10,
+            favourite: false
         }
     ]
 }

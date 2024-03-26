@@ -9,9 +9,6 @@ function renderContainerTotal (parentID){
 
     for(let i = 0; i < listings.length; i++){
 
-
-
-        console.log("here");
         let listingsDOM = document.createElement("p");
         listingsDOM.id = listings[i];
 
@@ -22,6 +19,5 @@ function renderContainerTotal (parentID){
     document.getElementById("EntityOne").textContent = "Games:" + STATE.entityOne.length;
     document.getElementById("EntityTwo").textContent = "Characters:" + STATE.entityTwo.length;
     document.getElementById("Favorites").textContent = "Favorites:";
-    console.log(STATE.entityOne.length);
 }
 
