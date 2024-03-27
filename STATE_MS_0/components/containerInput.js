@@ -24,21 +24,20 @@ function rendercontainerInput(parentID){
     button2DOM.textContent = "Character";
     parentDOM.appendChild(button2DOM);
 
+    
 
     buttonDOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
         STATE.entityOne.push({
-            /* message: `idValue: ${idValue}, Text: ${textValue}, Number: ${numberValue}`, */ 
             id: idValue,
             title: textValue,
             rank: numberValue
         });
         
+        
         idValue++;
-
-        /* renderDeleteButton(); */
 
         renderApp();
     });

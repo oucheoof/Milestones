@@ -12,9 +12,9 @@ function renderInstance( parentID, instanceData) {
     DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
 
     parentDOM.appendChild(DOM);
+    DOM.id = "instance"; //Gör instance dynamisk med siffra.
 
-    DOM.id = "instance";
+    renderDeleteButton("wrapper");
     
-
 
 }
