@@ -7,7 +7,15 @@ function renderInstance(parentID, instanceData, instanceID) {
 
     // Increment the counter and use it to generate a unique ID
     DOM.id = `$instance: ${instanceID}`;
-    instanceID = DOM.id
+    /* instanceID = DOM.id */
 
-    renderDeleteButton(parentID, instanceID);
+
+
+    if (parentID === "containerTwo") {
+        renderDeleteButton2(parentID, instanceID);
+    }
+    else if (parentID === "containerOne") {
+        renderDeleteButton(parentID, instanceID);
+    }
+
 }
