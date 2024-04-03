@@ -6,6 +6,8 @@ function renderInstance(parentID, instanceData, instanceID) {
     parentDOM.appendChild(DOM);
 
     // Increment the counter and use it to generate a unique ID
-    DOM.id = `${instanceID}`;
-    renderDeleteButton(parentID);
+    DOM.id = `$instance: ${instanceID}`;
+    instanceID = DOM.id
+
+    renderDeleteButton(parentID, instanceID);
 }

@@ -47,8 +47,12 @@ function rendercontainerInput(parentID){
         let numberValue = inputNumberDOM.value;
 
         STATE.entityTwo.push({
-            id: `ID: ${idValue}, Character: ${textValue}, Rank: ${numberValue}`,
+            id: idValue,
+            title: textValue,
+            rank: numberValue
         });
+
+        idValue++;
 
         renderApp()
     });

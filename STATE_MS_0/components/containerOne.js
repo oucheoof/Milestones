@@ -23,6 +23,4 @@ function renderContainerOne( parentID) { // parentId = "wrapper"
         renderInstance(DOM.id, entityOne[i], i)
     }
 
-/*     entityOne.forEach(element => renderInstance("containerOne", element))
- */    
 }
