@@ -1,20 +1,11 @@
-function renderInstance( parentID, instanceData) {
-
-    /*
-    
-        skapa DOM appenda till parentID
-        textContent = instancedata.message från ROW
-    
-    */
-
+function renderInstance(parentID, instanceData, instanceID) {
     let DOM = document.createElement("div");
     let parentDOM = document.getElementById(parentID);
     DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
 
     parentDOM.appendChild(DOM);
-    DOM.id = "instance"; //Gör instance dynamisk med siffra.
 
-    renderDeleteButton("wrapper");
-    
-
+    // Increment the counter and use it to generate a unique ID
+    DOM.id = `${instanceID}`;
+    renderDeleteButton(parentID);
 }
