@@ -18,4 +18,6 @@ function renderInstance(parentID, instanceData, instanceID) {
         renderDeleteButton(parentID, instanceID);
     }
 
+    // Correctly passing the DOM element, not the ID
+    renderFavouriteButton(DOM, instanceData);
 }
