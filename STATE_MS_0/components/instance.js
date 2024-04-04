@@ -1,17 +1,23 @@
-function renderInstance( parentID, instanceData) {
-
-    /*
-    
-        skapa DOM appenda till parentID
-        textContent = instancedata.message från ROW
-    
-    */
-
+function renderInstance(parentID, instanceData, instanceID) {
     let DOM = document.createElement("div");
-    DOM.id = "instance";
-    DOM.textContent = instanceData.message;
-
-    parentDOM = document.getElementById(parentID);
+    let parentDOM = document.getElementById(parentID);
+    DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
 
     parentDOM.appendChild(DOM);
+
+    DOM.id = `$instance: ${instanceID}`;
+    /* instanceID = DOM.id */
+
+
+
+    if (parentID === "containerTwo") {
+        renderDeleteButton2(parentID, instanceID);
+    }
+    else if (parentID === "containerOne") {
+        renderDeleteButton(parentID, instanceID);
+    }
+
+    // Correctly passing the DOM element, not the ID
+    renderFavouriteButton(DOM, instanceData);
+
 }

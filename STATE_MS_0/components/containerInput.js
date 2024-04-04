@@ -1,6 +1,8 @@
+let idValue = 0; //Flytta vart?
+
 function rendercontainerInput(parentID){
 
-    parentDOM = document.getElementById(parentID); // "Wrapper", state.js
+    parentDOM = document.getElementById(parentID);
 
 
     let inputTextDOM = document.createElement("input");
@@ -8,8 +10,8 @@ function rendercontainerInput(parentID){
     parentDOM.appendChild(inputTextDOM);
 
     let inputNumberDOM = document.createElement("input");
+    parentDOM = document.getElementById(parentID);
     inputNumberDOM.type =  "number";
-    console.log("here");
     parentDOM.appendChild(inputNumberDOM);
 
     let buttonDOM = document.createElement("button");
@@ -22,30 +24,40 @@ function rendercontainerInput(parentID){
     button2DOM.textContent = "Character";
     parentDOM.appendChild(button2DOM);
 
+    
 
-
-    buttonDOM.addEventListener("click", function(){
+    buttonDOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-        let containerOneTarget = document.getElementById("containerOne")
+        STATE.entityOne.push({
+            id: idValue,
+            title: textValue,
+            rank: numberValue,
+            favourite: false
+        });
+        
+        
+        idValue++;
 
-        console.log(textValue);
-        console.log(numberValue);
-
-        addNewRow(textValue, numberValue, containerOneTarget);
-    })
-
-    button2DOM.addEventListener("click", function(){
+        renderApp();
+    });
+    
+    button2DOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-        let containerTwoTarget = document.getElementById("containerTwo")
+        STATE.entityTwo.push({
+            id: idValue,
+            title: textValue,
+            rank: numberValue,
+            favourite: false
+        });
 
-        console.log(textValue);
-        console.log(numberValue);
+        idValue++;
 
-        addNewRow(textValue, numberValue, containerTwoTarget);
-    })
+        renderApp()
+    });
+
 
 }

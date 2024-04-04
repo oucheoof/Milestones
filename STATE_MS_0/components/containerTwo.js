@@ -19,7 +19,7 @@ function renderContainerTwo( parentID) {
     const entitytwo = STATE.entityTwo;
 
     for(let i = 0; i < entitytwo.length; i++){
-        renderInstance(DOM.id, entitytwo[i])
+        renderInstance(DOM.id, entitytwo[i], i)
     }
 
 }
