@@ -1,10 +1,9 @@
-// Adjusting the function to accept an ID for deletion
 function renderDeleteButton(parentID) {
     let entities = parentID === "containerTwo" ? STATE.entityTwo : STATE.entityOne;
     let parentWrapper = document.getElementById(parentID);
 
     entities.forEach((entity, index) => {
-        let buttonId = `deleteBtn_${parentID}_${entity.id}`; // Unique per entity and container
+        let buttonId = `deleteBtn_${parentID}_${entity.id}`;
 
         if (!document.getElementById(buttonId)) {
             let deleteButtonDOM = document.createElement("button");
@@ -16,7 +15,7 @@ function renderDeleteButton(parentID) {
                 const entityIndex = entities.findIndex(e => e.id === entity.id);
                 if (entityIndex > -1) {
                     entities.splice(entityIndex, 1);
-                    renderApp(); // A function that re-renders the app
+                    renderApp(); 
                 }
             });
         }
@@ -25,7 +24,7 @@ function renderDeleteButton(parentID) {
 
 
 function renderDeleteButton2(parentID) {
-    let entityTwo = STATE.entityTwo; // Assuming STATE.entityOne is an array
+    let entityTwo = STATE.entityTwo; 
     let parentWrapper = document.getElementById(parentID);
 
     if (!parentWrapper) {
@@ -33,18 +32,18 @@ function renderDeleteButton2(parentID) {
         return;
     }
 
-    // Use forEach to iterate over entityOne
+
     entityTwo.forEach((entity, index) => {
-        let buttonId = `deleteBtn_${index}`; // Construct button ID using index
+        let buttonId = `deleteBtn_${index}`; 
 
         if (!document.getElementById(buttonId)) {
-            // If the button doesn't exist, create and append it
+
             let deleteButtonDOM = document.createElement("button");
             deleteButtonDOM.textContent = "DELETE";
             deleteButtonDOM.id = buttonId;
             parentWrapper.appendChild(deleteButtonDOM);
 
-            // Attach event listener directly within forEach loop
+
             deleteButtonDOM.addEventListener("click", function() {
                 console.log("Delete logic for entity with index: ", index);
                 entityTwo.splice(index, 1);

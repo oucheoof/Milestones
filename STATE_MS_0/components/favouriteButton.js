@@ -7,7 +7,7 @@ function renderFavouriteButton(parentElement, instanceData) {
         instanceData.favourite = !instanceData.favourite;
         
         this.textContent = instanceData.favourite ? "Unfavourite" : "Favourite";
-
+        renderApp();
     });
 
     parentElement.appendChild(favouriteDOM);
