@@ -33,7 +33,8 @@ function rendercontainerInput(parentID){
         STATE.entityOne.push({
             id: idValue,
             title: textValue,
-            rank: numberValue
+            rank: numberValue,
+            favourite: false
         });
         
         
@@ -49,7 +50,8 @@ function rendercontainerInput(parentID){
         STATE.entityTwo.push({
             id: idValue,
             title: textValue,
-            rank: numberValue
+            rank: numberValue,
+            favourite: false
         });
 
         idValue++;

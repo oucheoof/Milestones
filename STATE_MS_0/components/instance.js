@@ -5,7 +5,6 @@ function renderInstance(parentID, instanceData, instanceID) {
 
     parentDOM.appendChild(DOM);
 
-    // Increment the counter and use it to generate a unique ID
     DOM.id = `$instance: ${instanceID}`;
     /* instanceID = DOM.id */
 
@@ -20,4 +19,5 @@ function renderInstance(parentID, instanceData, instanceID) {
 
     // Correctly passing the DOM element, not the ID
     renderFavouriteButton(DOM, instanceData);
+
 }
