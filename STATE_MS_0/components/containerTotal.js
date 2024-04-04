@@ -25,4 +25,5 @@ function renderContainerTotal(parentID) {
     let favoritesCount = STATE.entityOne.filter(e => e.favourite).length + STATE.entityTwo.filter(e => e.favourite).length;
     document.getElementById("Favorites").textContent = "Favorites: " + favoritesCount;
 
+    
 }

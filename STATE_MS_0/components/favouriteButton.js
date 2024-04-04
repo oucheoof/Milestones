@@ -13,5 +13,4 @@ function renderFavouriteButton(parentElement, instanceData) {
     parentElement.appendChild(favouriteDOM);
 
     console.log(instanceData);
-
 }
