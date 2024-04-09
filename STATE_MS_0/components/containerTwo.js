@@ -7,7 +7,7 @@ function renderContainerTwo( parentID) {
 
     parentDOM.appendChild(DOM);
 
-    const entitytwo = STATE.entityTwo;
+    const entitytwo = STATE.GET("entityTwo");
 
     for(let i = 0; i < entitytwo.length; i++){
         renderInstance(DOM.id, entitytwo[i], entitytwo.id)
