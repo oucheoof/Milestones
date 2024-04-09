@@ -1,5 +1,3 @@
-let idValue = 0; //Flytta vart?
-
 function rendercontainerInput(parentID){
 
     parentDOM = document.getElementById(parentID);
@@ -30,16 +28,29 @@ function rendercontainerInput(parentID){
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
+        let newID = 0;
+
+        for(let i = 0; i < STATE.entityOne.length; i++){
+            let row = STATE.entityOne[i];
+
+            if(row.id > newID){
+                newID = row.id;
+
+            }
+
+            
+        }
+
+        newID++;
+
         STATE.entityOne.push({
-            id: idValue,
+            id: newID,
             title: textValue,
             rank: numberValue,
             favourite: false
         });
-        
-        
-        idValue++;
 
+        
         renderApp();
     });
     
@@ -47,14 +58,16 @@ function rendercontainerInput(parentID){
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
+        let newID = 0;
+
         STATE.entityTwo.push({
-            id: idValue,
+            id: newID,
             title: textValue,
             rank: numberValue,
             favourite: false
         });
 
-        idValue++;
+        newID++;
 
         renderApp()
     });

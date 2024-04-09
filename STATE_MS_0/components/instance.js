@@ -1,23 +1,22 @@
-function renderInstance(parentID, instanceData, instanceID) {
+function renderInstance(parentID, instanceData) {
+    let instanceID = instanceData.id;
     let DOM = document.createElement("div");
     let parentDOM = document.getElementById(parentID);
     DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
 
     parentDOM.appendChild(DOM);
 
-    DOM.id = `$instance: ${instanceID}`;
-    /* instanceID = DOM.id */
+    DOM.id = `${parentID}: ${instanceID}`;
 
 
 
     if (parentID === "containerTwo") {
-        renderDeleteButton2(parentID, instanceID);
+        renderDeleteButton2(DOM.id, instanceID);
     }
     else if (parentID === "containerOne") {
-        renderDeleteButton(parentID, instanceID);
+        renderDeleteButton(DOM.id, instanceID);
     }
 
-    // Correctly passing the DOM element, not the ID
     renderFavouriteButton(DOM, instanceData);
 
 }
