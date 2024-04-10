@@ -1,9 +1,9 @@
-function renderContainerOne( parentID) { // parentId = "wrapper"
+function renderContainerOne( parentID) { 
 
     let DOM = document.createElement("div"); 
     DOM.id = "containerOne"; 
 
-    let parentDOM = document.getElementById(parentID); //hämta wrapper, reference
+    let parentDOM = document.getElementById(parentID); 
 
     parentDOM.appendChild(DOM);
 
