@@ -4,7 +4,6 @@ function addNewRow(textValue, numberValue, targetContainerID){
     newRow.textContent = `Text: ${textValue}, Rating: ${numberValue}`;
 
     targetContainerID.appendChild(newRow);
-    console.log("here");
 
     rendercontainerInput();
 }

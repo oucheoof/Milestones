@@ -25,6 +25,5 @@ function renderInstance(parentID, instanceData) {
 
 function deleteInstance(entity, id){
     let removeId = document.getElementById(`${entity}: ${id}`);
-    console.log(removeId);
     removeId.remove();
 }

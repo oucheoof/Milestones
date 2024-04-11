@@ -10,5 +10,4 @@ function renderFavouriteButton(parentElement, instanceData, entity) {
 
     parentElement.appendChild(favouriteDOM);
 
-    console.log(instanceData);
 }

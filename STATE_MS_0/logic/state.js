@@ -73,7 +73,6 @@ function Delete(entity, id){
 }
 
 function PATCH (entity, id){
-    console.log(entity, id)
 
     const rowIndex = _state[entity].findIndex(e => e.id === id);
 
