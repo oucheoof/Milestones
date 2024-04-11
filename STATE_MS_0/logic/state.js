@@ -95,6 +95,8 @@ function PATCH (entity, id){
     console.log(rowIndex);
 
     patchInstance(entity, id, boolFavourite);
+
+    updateCounter();
 }
 
 
