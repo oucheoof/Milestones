@@ -28,30 +28,6 @@ function rendercontainerInput(parentID){
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-/*         let newID = 0;
-
-        STATE.POST(){
-            for(let i = 0; i < STATE.entityOne.length; i++){
-            let row = STATE.entityOne[i];
-
-            if(row.id > newID){
-                newID = row.id;
-
-            }
-
-            
-            }
-        }
-
-        newID++;
-
-        STATE.entityOne.push({
-            id: newID,
-            title: textValue,
-            rank: numberValue,
-            favourite: false
-        }); */
-
         let newRow = {
             title: textValue,
             rank: numberValue,
@@ -61,23 +37,11 @@ function rendercontainerInput(parentID){
         STATE.POST('entityOne', newRow)
 
         
-        // renderApp();
     });
     
     button2DOM.addEventListener("click", function() {
-/*         let textValue = inputTextDOM.value;
+        let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
-
-        let newID = 0;
-
-        STATE.entityTwo.push({
-            id: newID,
-            title: textValue,
-            rank: numberValue,
-            favourite: false
-        });
-
-        newID++; */
         
         let newRow = {
             title: textValue,
@@ -87,7 +51,6 @@ function rendercontainerInput(parentID){
 
         STATE.POST('entityTwo', newRow)
 
-        // renderApp()
     });
 
 

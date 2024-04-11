@@ -21,7 +21,9 @@ const _state = {
 const STATE ={
     renderApp,
     GET,
-    POST
+    POST,
+    Delete
+    
 }
 
 function GET(entity){
@@ -54,8 +56,13 @@ function POST(entity, row){
 
 }
 
-function PATCH(){
+function Delete(entity, id){
+    
+    const entityIndex = _state[entity].findIndex(e => e.id === id);
+        
 
+    _state[entity].splice(entityIndex, 1);
+    renderApp(); 
 }
 
 
