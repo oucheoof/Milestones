@@ -17,7 +17,7 @@ function renderInstance(parentID, instanceData) {
     else if (parentID === "containerOne") {
         DOM.id = `entityOne: ${instanceID}`;
         renderDeleteButton(DOM.id, instanceID);
-        renderFavouriteButton(DOM, instanceData, 'entityOne');s
+        renderFavouriteButton(DOM, instanceData, 'entityOne');
     }
 
 
