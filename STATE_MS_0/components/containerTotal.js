@@ -27,3 +27,9 @@ function renderContainerTotal(parentID) {
 
     
 }
+function updateCounter() {
+    const counterDOM = document.getElementById( 'containerTotal');
+    counterDOM.innerHTML = null;
+    renderContainerTotal("wrapper");
+
+}

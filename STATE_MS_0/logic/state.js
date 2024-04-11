@@ -59,6 +59,8 @@ function POST(entity, row){
         case "entityTwo": postRenderInstanceContainerTwo(row);
         break
     }
+
+    updateCounter()
 }
 
 function Delete(entity, id){
@@ -70,6 +72,8 @@ function Delete(entity, id){
 
     deleteInstance(entity, id); 
     
+    updateCounter();
+
 }
 
 function PATCH (entity, id){
