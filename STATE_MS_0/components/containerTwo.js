@@ -12,5 +12,10 @@ function renderContainerTwo( parentID) {
     for(let i = 0; i < entitytwo.length; i++){
         renderInstance(DOM.id, entitytwo[i], entitytwo.id)
     }
+    
+
+}
+function postRenderInstanceContainerTwo(row){
+    renderInstance("containerTwo", row);    
 
 }

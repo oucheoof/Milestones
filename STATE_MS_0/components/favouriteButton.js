@@ -1,13 +1,11 @@
-function renderFavouriteButton(parentElement, instanceData) {
+function renderFavouriteButton(parentElement, instanceData, entity) {
     let favouriteDOM = document.createElement("button");
     favouriteDOM.textContent = instanceData.favourite ? "Unfavourite" : "Favourite";
 
     favouriteDOM.addEventListener("click", function() {
+        let instanceID = instanceData.id;
+        STATE.PATCH(entity, instanceID);
 
-        instanceData.favourite = !instanceData.favourite;
-        
-        this.textContent = instanceData.favourite ? "Unfavourite" : "Favourite";
-        renderApp();
     });
 
     parentElement.appendChild(favouriteDOM);

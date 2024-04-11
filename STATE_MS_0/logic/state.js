@@ -22,7 +22,8 @@ const STATE ={
     renderApp,
     GET,
     POST,
-    Delete
+    Delete,
+    PATCH
     
 }
 
@@ -43,7 +44,6 @@ function POST(entity, row){
             newID = row.id;
 
         }
-    
     }
 
     newID++;
@@ -52,8 +52,13 @@ function POST(entity, row){
 
     _state[entity].push(row);
 
-    renderApp()
-
+    switch(entity){
+        case "entityOne": postRenderInstanceContainerOne(row);
+        break
+        
+        case "entityTwo": postRenderInstanceContainerTwo(row);
+        break
+    }
 }
 
 function Delete(entity, id){
@@ -62,7 +67,28 @@ function Delete(entity, id){
         
 
     _state[entity].splice(entityIndex, 1);
-    renderApp(); 
+
+    deleteInstance(entity, id); 
+    
+}
+
+function PATCH (entity, id){
+    console.log(entity, id)
+
+    const rowIndex = _state[entity].findIndex(e => e.id === id);
+
+    let boolFavourite = _state[entity][rowIndex].favourite;
+
+    if(boolFavourite === false){
+        boolFavourite = true;
+    }
+    else{
+        boolFavourite = false;
+    }
+
+    _state[entity][rowIndex].favourite = boolFavourite;
+
+    renderApp();
 }
 
 

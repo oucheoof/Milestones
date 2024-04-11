@@ -6,17 +6,25 @@ function renderInstance(parentID, instanceData) {
 
     parentDOM.appendChild(DOM);
 
-    DOM.id = `${parentID}: ${instanceID}`;
 
 
 
     if (parentID === "containerTwo") {
+        DOM.id = `entityTwo: ${instanceID}`;
         renderDeleteButton2(DOM.id, instanceID);
+        renderFavouriteButton(DOM, instanceData, 'entityTwo');
     }
     else if (parentID === "containerOne") {
+        DOM.id = `entityOne: ${instanceID}`;
         renderDeleteButton(DOM.id, instanceID);
+        renderFavouriteButton(DOM, instanceData, 'entityOne');
     }
 
-    renderFavouriteButton(DOM, instanceData);
 
+}
+
+function deleteInstance(entity, id){
+    let removeId = document.getElementById(`${entity}: ${id}`);
+    console.log(removeId);
+    removeId.remove();
 }
