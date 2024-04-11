@@ -15,6 +15,5 @@ function renderContainerOne( parentID) { // parentId = "wrapper"
 }
 
 function postRenderInstanceContainerOne(row){
-    renderInstance("containerOne", row);    
-
+    renderInstance("containerOne", row);
 }

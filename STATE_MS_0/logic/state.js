@@ -91,7 +91,10 @@ function PATCH (entity, id){
 
     _state[entity][rowIndex].favourite = boolFavourite;
 
-    renderApp();
+    console.log(boolFavourite);
+    console.log(rowIndex);
+
+    patchInstance(entity, id, boolFavourite);
 }
 
 
