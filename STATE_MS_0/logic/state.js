@@ -1,4 +1,4 @@
-const _state = {
+const STATE = {
     entityOne: [
         {
             id: 0,
@@ -17,47 +17,6 @@ const _state = {
         }
     ]
 }
-
-const STATE ={
-    renderApp,
-    GET,
-    POST
-}
-
-function GET(entity){
-    let entityArray = _state[entity];
-
-    let copyOfEntity = JSON.parse(JSON.stringify(entityArray));
-    return copyOfEntity;
-}
-
-function POST(entity, row){
-    let newID = 0;
-
-    for(let i = 0; i < _state[entity].length; i++){
-        let row = _state[entity][i];;
-
-        if(row.id > newID){
-            newID = row.id;
-
-        }
-    
-    }
-
-    newID++;
-
-    row.id = newID;
-
-    _state[entity].push(row);
-
-    renderApp()
-
-}
-
-function PATCH(){
-
-}
-
 
 
 
