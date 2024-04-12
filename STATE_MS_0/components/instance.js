@@ -37,4 +37,3 @@ function patchInstance(entity, id, isFavourite) {
         favouriteButton.textContent = isFavourite ? "Unfavourite" : "Favourite";
     }
 }
-

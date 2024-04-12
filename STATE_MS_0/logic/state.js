@@ -1,21 +1,5 @@
 const _state = {
-    entityOne: [
-        {
-            id: 0,
-            title: "God of War",
-            rank: 10,
-            favourite: false
-
-        }
-    ],
-    entityTwo: [
-        {
-            id: 1,
-            title: "Kratos",
-            rank: 10,
-            favourite: false
-        }
-    ]
+  
 }
 
 const STATE ={
@@ -78,7 +62,7 @@ function Delete(entity, id){
 
 function PATCH (entity, id){
 
-    const rowIndex = _state[entity].findIndex(e => e.id === id);
+    const rowIndex = _state[entity].findIndex(e => e.id === data.id);
 
     let boolFavourite = _state[entity][rowIndex].favourite;
 
