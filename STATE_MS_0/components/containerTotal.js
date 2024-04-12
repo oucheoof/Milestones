@@ -17,13 +17,17 @@ function renderContainerTotal(parentID) {
         containerTotalDOM.appendChild(listingDOM);
     });
 
-    // Update counts for EntityOne and EntityTwo
-    document.getElementById("EntityOne").textContent = "Games: " + STATE.entityOne.length;
-    document.getElementById("EntityTwo").textContent = "Characters: " + STATE.entityTwo.length;
+    document.getElementById("EntityOne").textContent = "Games: " + STATE.GET("entityOne").length;
+    document.getElementById("EntityTwo").textContent = "Characters: " + STATE.GET("entityTwo").length;
 
-    // Calculate and display the favorites count
-    let favoritesCount = STATE.entityOne.filter(e => e.favourite).length + STATE.entityTwo.filter(e => e.favourite).length;
+    let favoritesCount = STATE.GET("entityOne").filter(e => e.favourite).length + STATE.GET("entityTwo").filter(e => e.favourite).length;
     document.getElementById("Favorites").textContent = "Favorites: " + favoritesCount;
 
     
+}
+function updateCounter() {
+    const counterDOM = document.getElementById( 'containerTotal');
+    counterDOM.innerHTML = null;
+    renderContainerTotal("wrapper");
+
 }

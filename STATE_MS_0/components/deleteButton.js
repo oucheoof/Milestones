@@ -1,5 +1,4 @@
-function renderDeleteButton(parentID) {
-    let entities = STATE.entityOne;
+function renderDeleteButton(parentID, id) {
     let parentWrapper = document.getElementById(parentID);
 
     
@@ -8,18 +7,14 @@ function renderDeleteButton(parentID) {
     parentWrapper.appendChild(deleteButtonDOM);
 
     deleteButtonDOM.addEventListener("click", function() {
-
-        const entityIndex = entities.findIndex(e => e.id === entities.id);
-            entities.splice(entityIndex, 1);
-            renderApp(); 
+        STATE.Delete('entityOne', id);
     });
         
 }
 
 
 
-function renderDeleteButton2(parentID) {
-    let entityTwo = STATE.entityTwo; 
+function renderDeleteButton2(parentID, id) {
     let parentWrapper = document.getElementById(parentID);
 
     
@@ -28,10 +23,7 @@ function renderDeleteButton2(parentID) {
     parentWrapper.appendChild(deleteButtonDOM);
 
     deleteButtonDOM.addEventListener("click", function() {
-        const entityIndex = entityTwo.findIndex(e => e.id === entityTwo.id);
-
-            entityTwo.splice(entityIndex, 1);
-            renderApp(); 
+        STATE.Delete('entityTwo', id);
     });
 
 }
