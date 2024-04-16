@@ -1,20 +1,7 @@
 const _state = {
     entityOne: [
-        {
-            id: 0,
-            title: "God of War",
-            rank: 10,
-            favourite: false
-
-        }
     ],
     entityTwo: [
-        {
-            id: 1,
-            title: "Kratos",
-            rank: 10,
-            favourite: false
-        }
     ]
 }
 
@@ -27,6 +14,8 @@ const STATE ={
     
 }
 
+let token = "ec24b88c7f3f7a3d488f29d59f70baba7f86414e";
+
 function GET(entity){
     let entityArray = _state[entity];
 
@@ -34,38 +23,33 @@ function GET(entity){
     return copyOfEntity;
 }
 
-function POST(entity, row){
-    let newID = 0;
 
-    for(let i = 0; i < _state[entity].length; i++){
-        let row = _state[entity][i];;
+async function POST(entity, rqst){
 
-        if(row.id > newID){
-            newID = row.id;
+    const data = await fetcher( rqst);
 
-        }
-    }
-
-    newID++;
-
-    row.id = newID;
-
-    _state[entity].push(row);
+    _state[entity].push(data);
 
     switch(entity){
-        case "entityOne": postRenderInstanceContainerOne(row);
-        break
+        case "entityOne": 
+            postRenderInstanceContainerOne(data);
+            break;
         
-        case "entityTwo": postRenderInstanceContainerTwo(row);
-        break
+        case "entityTwo": 
+            postRenderInstanceContainerTwo(data);
+            break;
     }
 
-    updateCounter()
+    updateCounter();
 }
 
-function Delete(entity, id){
+
+async function Delete(entity, id, rqst){
+
+    const data = await fetcher( rqst);
+
     
-    const entityIndex = _state[entity].findIndex(e => e.id === id);
+    const entityIndex = _state[entity].findIndex(e => e.id === data.id);
         
 
     _state[entity].splice(entityIndex, 1);
@@ -76,33 +60,45 @@ function Delete(entity, id){
 
 }
 
-function PATCH (entity, id){
+async function PATCH (entity, id, rqst){
+    
+    const data = await fetcher(rqst);
 
-    const rowIndex = _state[entity].findIndex(e => e.id === id);
+    const rowIndex = _state[entity].findIndex(e => e.id === data.id);
 
-    let boolFavourite = _state[entity][rowIndex].favourite;
-
-    if(boolFavourite === false){
-        boolFavourite = true;
-    }
-    else{
-        boolFavourite = false;
-    }
-
-    _state[entity][rowIndex].favourite = boolFavourite;
-
-    console.log(boolFavourite);
     console.log(rowIndex);
 
-    patchInstance(entity, id, boolFavourite);
+    // let boolFavourite = _state[entity][rowIndex].favourite;
+
+    // if(boolFavourite === false){
+    //     boolFavourite = true;
+    // }
+    // else{
+    //     boolFavourite = false;
+    // }
+
+    _state[entity][rowIndex].favorite = data.favorite;
+
+    patchInstance(entity, id, data.favorite);
 }
 
 
 
 
-function renderApp() {
+async function renderApp() {
 
     document.querySelector('main').innerHTML = null;
+
+
+    let gamesRequest = new Request("./api/games.php?token=" + token)
+    let characterRequest = new Request("./api/characters.php?token=" + token)
+
+    const gameData = await fetcher (gamesRequest)
+    const characterData = await fetcher (characterRequest)
+
+    _state.entityOne = gameData;
+
+    _state.entityTwo =  characterData;
 
     renderContainerOne('wrapper');
     renderContainerTwo('wrapper');

@@ -2,7 +2,7 @@ function renderInstance(parentID, instanceData) {
     let instanceID = instanceData.id;
     let DOM = document.createElement("div");
     let parentDOM = document.getElementById(parentID);
-    DOM.textContent = `Title: ${instanceData.title}, Rank: ${instanceData.rank}`;
+    DOM.textContent = `Title: ${instanceData.name}, Rank: ${instanceData.rating}`;
 
     parentDOM.appendChild(DOM);
 

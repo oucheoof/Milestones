@@ -33,28 +33,41 @@ function rendercontainerInput(parentID){
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
 
-        let newRow = {
-            title: textValue,
-            rank: numberValue,
-            favourite: false
-        }
+        let rqst = new Request("./api/games.php", { 
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: token,  
+                name: textValue, 
+                rating: numberValue,               
+                favorite: false
+            })
+        })
         
-        STATE.POST('entityOne', newRow)
-
+        STATE.POST('entityOne', rqst)
         
     });
     
     button2DOM.addEventListener("click", function() {
         let textValue = inputTextDOM.value;
         let numberValue = inputNumberDOM.value;
-        
-        let newRow = {
-            title: textValue,
-            rank: numberValue,
-            favourite: false
-        }
 
-        STATE.POST('entityTwo', newRow)
+        let rqst = new Request("./api/characters.php", { 
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: token,  
+                name: textValue, 
+                rating: numberValue,               
+                favorite: false
+            })
+        })
+        
+        STATE.POST('entityTwo', rqst)
 
     });
 

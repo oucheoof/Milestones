@@ -7,7 +7,20 @@ function renderDeleteButton(parentID, id) {
     parentWrapper.appendChild(deleteButtonDOM);
 
     deleteButtonDOM.addEventListener("click", function() {
-        STATE.Delete('entityOne', id);
+
+
+        let gameRqst = new Request("./api/games.php", { 
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: token,  
+                id: id
+            })
+        })
+
+        STATE.Delete('entityOne', id, gameRqst);
     });
         
 }
@@ -23,8 +36,20 @@ function renderDeleteButton2(parentID, id) {
     parentWrapper.appendChild(deleteButtonDOM);
 
     deleteButtonDOM.addEventListener("click", function() {
-        STATE.Delete('entityTwo', id);
-    });
 
+
+        let characterRqst = new Request("./api/characters.php", { 
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: token,  
+                id: id
+            })
+        })
+
+        STATE.Delete('entityTwo', id, characterRqst);
+    });
 }
 

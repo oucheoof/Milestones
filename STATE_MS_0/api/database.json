@@ -12,7 +12,7 @@
         },
         {
             "name": "DeoHard",
-            "password": "lösenord",
+            "password": "l\u00f6senord",
             "id": 4
         }
     ],
@@ -35,29 +35,22 @@
             "id": 3,
             "user_id": 2,
             "name": "Backgammon",
-            "favorite": true,
+            "favorite": false,
             "rating": 5
         },
         {
-            "name": "God of War: Ragnar\u00f6k",
-            "rating": 10,
+            "name": "dasjdn",
+            "rating": "12",
             "favorite": true,
             "user_id": 4,
             "id": 4
         },
         {
-            "name": "Helldivers II",
-            "rating": 9,
-            "favorite": true,
-            "user_id": 4,
-            "id": 5
-        },
-        {
-            "name": "Red Dead Redemption 2",
-            "rating": 10,
+            "name": "jdoias",
+            "rating": "10",
             "favorite": false,
             "user_id": 4,
-            "id": 6
+            "id": 5
         }
     ],
     "characters": [
@@ -83,18 +76,11 @@
             "rating": 5
         },
         {
-            "name": "Kratos of Sparta",
-            "rating": 10,
+            "name": "jdoias",
+            "rating": "10",
             "favorite": false,
             "user_id": 4,
             "id": 2
-        },
-        {
-            "name": "Arthur Morgan",
-            "rating": 10,
-            "favorite": true,
-            "user_id": 4,
-            "id": 3
         }
     ]
 }
