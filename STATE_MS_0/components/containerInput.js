@@ -5,11 +5,16 @@ function rendercontainerInput(parentID){
 
     let inputTextDOM = document.createElement("input");
     inputTextDOM.type =  "text";
+    inputTextDOM.placeholder = "Title/Character"
     parentDOM.appendChild(inputTextDOM);
+
+    console.log(inputTextDOM);
 
     let inputNumberDOM = document.createElement("input");
     parentDOM = document.getElementById(parentID);
     inputNumberDOM.type =  "number";
+    inputNumberDOM.placeholder = "Ranking"
+
     parentDOM.appendChild(inputNumberDOM);
 
     let buttonDOM = document.createElement("button");
