@@ -37,20 +37,6 @@
             "name": "Backgammon",
             "favorite": false,
             "rating": 5
-        },
-        {
-            "name": "dasjdn",
-            "rating": "12",
-            "favorite": true,
-            "user_id": 4,
-            "id": 4
-        },
-        {
-            "name": "jdoias",
-            "rating": "10",
-            "favorite": false,
-            "user_id": 4,
-            "id": 5
         }
     ],
     "characters": [
@@ -74,13 +60,6 @@
             "name": "Batman",
             "favorite": false,
             "rating": 5
-        },
-        {
-            "name": "jdoias",
-            "rating": "10",
-            "favorite": false,
-            "user_id": 4,
-            "id": 2
         }
     ]
 }
