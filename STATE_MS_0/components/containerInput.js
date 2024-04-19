@@ -45,6 +45,8 @@ function rendercontainerInput(parentID){
                 favorite: false
             })
         })
+
+        //Värdena för POST. 
         
         STATE.POST('entityOne', rqst)
         

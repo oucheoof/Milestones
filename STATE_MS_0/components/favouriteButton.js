@@ -24,6 +24,7 @@ function renderFavouriteButton(parentElement, instanceData, entity) {
             favoriteBool = true
         }
 
+        //Vi sköter textContent
 
         let instanceID = instanceData.id;
         let rqst = new Request(`./api/${typeOfEntity}.php`, { 

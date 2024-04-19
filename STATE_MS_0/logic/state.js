@@ -46,7 +46,7 @@ async function POST(entity, rqst){
 
 async function Delete(entity, id, rqst){
 
-    const data = await fetcher( rqst);
+    const data = await fetcher(rqst);
 
     
     const entityIndex = _state[entity].findIndex(e => e.id === data.id);
@@ -67,6 +67,8 @@ async function PATCH (entity, id, rqst){
     const rowIndex = _state[entity].findIndex(e => e.id === data.id);
 
     console.log(rowIndex);
+
+    //Ändra så att vi jämför med id i från servern, servern sköter jämförelse
 
     // let boolFavourite = _state[entity][rowIndex].favourite;
 
@@ -95,6 +97,8 @@ async function renderApp() {
 
     const gameData = await fetcher (gamesRequest)
     const characterData = await fetcher (characterRequest)
+
+    //Hämtar den data som finns i gamesRequest/characterRequest
 
     _state.entityOne = gameData;
 

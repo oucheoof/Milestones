@@ -5,3 +5,5 @@ async function fetcher(rqst){
 
     return data;
 }
+
+//Hämta data från servern

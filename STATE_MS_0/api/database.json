@@ -37,6 +37,13 @@
             "name": "Backgammon",
             "favorite": false,
             "rating": 5
+        },
+        {
+            "name": "Stephen",
+            "rating": "10",
+            "favorite": false,
+            "user_id": 4,
+            "id": 4
         }
     ],
     "characters": [
@@ -60,6 +67,13 @@
             "name": "Batman",
             "favorite": false,
             "rating": 5
+        },
+        {
+            "name": "Stephen2",
+            "rating": "10",
+            "favorite": false,
+            "user_id": 4,
+            "id": 2
         }
     ]
 }

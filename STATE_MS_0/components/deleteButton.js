@@ -20,6 +20,8 @@ function renderDeleteButton(parentID, id) {
             })
         })
 
+        //Id, token, gameRqst för att hitta id och ta bort instans
+
         STATE.Delete('entityOne', id, gameRqst);
     });
         
